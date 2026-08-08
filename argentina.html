@@ -171,11 +171,11 @@
 
     <main class="flex-grow pt-16">
         
-      <!-- HERO SECTION MINIMALISTA CON ROTACIÓN DE VIDEO -->
-        <!-- HERO SECTION MINIMALISTA CON ROTACIÓN DE VIDEO -->
+<!-- HERO SECTION MINIMALISTA CON ROTACIÓN DE VIDEO -->
 <section class="relative bg-slate-950 text-white min-h-[85vh] flex items-center justify-center overflow-hidden border-b border-slate-900">
-    <!-- Video de fondo optimizado en formato MP4 -->
-    <video id="heroVideo" src="in33.mp4" poster="miniatura.jpg" autoplay muted playsinline loop preload="auto" class="absolute inset-0 w-full h-full object-cover opacity-100">
+    
+    <!-- Video de fondo (El script de abajo le inyecta el video y la miniatura correcta) -->
+    <video id="heroVideo" autoplay muted playsinline loop preload="auto" class="absolute inset-0 w-full h-full object-cover opacity-100">
     </video>
 
     <!-- Capa oscura para legibilidad -->
@@ -1041,31 +1041,30 @@
     });
 </script>
 
+<!-- Script inteligente para asignar video y miniatura según el dispositivo -->
 <script>
     // 1. Detectar si el usuario está en un teléfono celular (ancho menor o igual a 768px)
     const esMovil = window.innerWidth <= 768;
 
-    // 2. Videos para Computadoras de Escritorio (Tus videos intactos)
-    const videosDesktop = [
-        "in33.mp4",
-        
-    ];
+    // 2. Videos para Computadoras de Escritorio y su miniatura
+    const videosDesktop = ["in33.mp4"];
+    const posterDesktop = "miniatura.png";
 
-    // 3. Videos exclusivos para Teléfonos Celulares (Modifica estos nombres con los videos que quieras para móvil)
-    const videosMovil = [
-        "mo33.mp4",
-        
-        
-    ];
+    // 3. Videos para Celulares y su miniatura independiente
+    const videosMovil = ["mo33.mp4"];
+    const posterMovil = "miniatura-movil.png"; // Cambia esto por el nombre de tu archivo para móvil
 
-    // Selecciona la lista adecuada sin afectar la versión de escritorio
+    // Seleccionar los recursos adecuados según el dispositivo
     const videos = esMovil ? videosMovil : videosDesktop;
+    const posterActual = esMovil ? posterMovil : posterDesktop;
 
     let currentVideoIndex = 0;
     const videoElement = document.getElementById('heroVideo');
 
     if (videoElement) {
+        // Asignar el video y su respectiva miniatura de forma dinámica
         videoElement.src = videos[currentVideoIndex];
+        videoElement.poster = posterActual;
 
         videoElement.addEventListener('ended', function() {
             currentVideoIndex = (currentVideoIndex + 1) % videos.length;
@@ -1076,7 +1075,6 @@
         });
     }
 </script>
-
 <!-- Librería para animaciones al hacer scroll (AOS JS) -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
