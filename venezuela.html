@@ -117,7 +117,23 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased selection:bg-brand-light selection:text-brand">
     
-    
+   <!-- Pantalla de carga para esconder el lag inicial -->
+<div id="preloader" class="fixed inset-0 bg-slate-950 z-50 flex flex-col items-center justify-center transition-opacity duration-700">
+    <div class="text-white font-bold tracking-widest text-lg uppercase animate-pulse mb-3">Publichris</div>
+    <div class="w-10 h-10 border-4 border-red-600 border-t-transparent rounded-full animate-spin"></div>
+</div>
+
+<script>
+    window.addEventListener('load', function() {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            // Añade clases para desvanecerlo suavemente
+            preloader.classList.add('opacity-0', 'pointer-events-none');
+            // Lo elimina del documento por completo tras la animación
+            setTimeout(() => preloader.remove(), 700);
+        }
+    });
+</script>
 
 
     <!-- HEADER -->
@@ -1022,7 +1038,7 @@
 
     // 3. Videos para Celulares y su miniatura independiente
     const videosMovil = ["mo33.mp4"];
-    const posterMovil = "miniatura-movil.png"; // Cambia esto por el nombre de tu archivo para móvil
+    const posterMovil = "miniatura2.png"; // Cambia esto por el nombre de tu archivo para móvil
 
     // Seleccionar los recursos adecuados según el dispositivo
     const videos = esMovil ? videosMovil : videosDesktop;
