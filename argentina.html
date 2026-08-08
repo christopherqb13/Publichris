@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inflables PubliChris | Muñecos Llamadores, Tótems y Gazebos Publicitarios</title>
+
+    <meta name="description" content="Venta y alquiler de inflables publicitarios, muñecos llamadores de clientes, tótems y gazebos en Argentina y Venezuela. ¡Cotiza por WhatsApp!">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        @property --brand-hue {
+            syntax: '<angle>';
+            initial-value: 358deg;
+            inherits: true;
+        }
+
+        :root {
+            --brand-hue: 358deg;
+            --brand-color: hsl(var(--brand-hue), 95%, 50%);
+            --brand-light: hsla(var(--brand-hue), 95%, 50%, 0.04);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff !important;
+            color: #8ba8ec;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        @keyframes seamlessHueShift {
+            0% { --brand-hue: 358deg; }
+            100% { --brand-hue: -2deg; }
+        }
+
+        body {
+            animation: seamlessHueShift 120s linear infinite;
+        }
+
+        .text-brand { color: hsl(var(--brand-hue), 95%, 50%) !important; }
+        .bg-brand { background-color: hsl(var(--brand-hue), 95%, 50%) !important; }
+        .bg-brand-light { background-color: hsla(var(--brand-hue), 95%, 50%, 0.04) !important; }
+        .border-brand { border-color: hsl(var(--brand-hue), 95%, 50%) !important; }
+
+        .custom-header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(241, 245, 249, 0.8);
+        }
+
+        .product-card {
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .product-card:hover {
+            border-color: hsl(var(--brand-hue), 95%, 50%);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px hsla(var(--brand-hue), 95%, 50%, 0.08);
+        }
+
+        input:focus, button:focus {
+            outline: none;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 99;
+            box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.3);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+        }
+
+        #countryModal {
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+        
+    </style>
+    <style>
+        /* Animación fina de flotación para íconos */
+        @keyframes float-icon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .animate-float {
+            animation: float-icon 3s ease-in-out infinite;
+        }
+  /* Animación flotante suave */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-7px); }
+  }
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Animación de pulso resplandeciente */
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); }
+    50% { box-shadow: 0 0 30px rgba(16, 185, 129, 0.7); }
+  }
+  .animate-glow-green {
+    animation: pulseGlow 2.5s infinite;
+  }
+</style>
+<!-- Librería para animaciones al hacer scroll (AOS CSS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-brand-light selection:text-brand">
+    
+    
+
+
+    <!-- HEADER -->
+    <!-- NAVBAR CON SCROLL SUAVE -->
+<header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-3">
+        
+        <!-- Fila superior en móvil: Logo y Redes Sociales -->
+        <div class="w-full md:w-auto flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="text-xl font-black text-slate-900 tracking-tight">
+                Publi<span class="text-brand">chris</span>
+            </a>
+
+            <!-- Redes Sociales (Opcional: visibles en móvil al lado del logo) -->
+            <div class="flex md:hidden items-center gap-2">
+                <a href="https://www.facebook.com/share/1e7mg33NGk/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-700">
+                    <i class="fa-brands fa-facebook-f text-xs"></i>
+                </a>
+                <a href="https://www.instagram.com/inflables_publichris/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-700">
+                    <i class="fa-brands fa-instagram text-xs"></i>
+                </a>
+                <a href="https://www.tiktok.com/@publichris4" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-700">
+                    <i class="fa-brands fa-tiktok text-xs"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Enlaces del Menú con Scroll Suave -->
+        <nav class="w-full md:w-auto flex items-center justify-center gap-6 text-xs font-semibold text-slate-600 py-1 md:py-0 border-t md:border-t-0 border-slate-100">
+            <a href="#catalogo" class="hover:text-brand transition py-1">Catálogo</a>
+            <a href="#personalizados" class="hover:text-brand transition py-1">Contacto</a>
+            <a href="#ubicacion" class="hover:text-brand transition-colors py-1">Dirección</a>
+        </nav>
+
+        <!-- Redes Sociales para Escritorio -->
+        <div class="hidden md:flex items-center gap-4 text-slate-700">
+            <a href="https://www.facebook.com/share/1e7mg33NGk/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-slate-50 flex items-center justify-center hover:bg-slate-100 transition">
+                <i class="fa-brands fa-facebook-f text-sm"></i>
+            </a>
+            <a href="https://www.instagram.com/inflables_publichris/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-slate-50 flex items-center justify-center hover:bg-slate-100 transition">
+                <i class="fa-brands fa-instagram text-sm"></i>
+            </a>
+            <a href="https://www.tiktok.com/@publichris4" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-slate-50 flex items-center justify-center hover:bg-slate-100 transition">
+                <i class="fa-brands fa-tiktok text-sm"></i>
+            </a>
+        </div>
+
+    </div>
+</header>
+
+    <main class="flex-grow pt-16">
+        
+      <!-- HERO SECTION MINIMALISTA CON ROTACIÓN DE VIDEO -->
+        <section class="relative bg-slate-950 text-white min-h-[85vh] flex items-center justify-center overflow-hidden border-b border-slate-900">
+            <!-- Video de fondo con ID para JavaScript -->
+            <video id="heroVideo" src="in33.mov" autoplay muted playsinline loop preload="auto" class="absolute inset-0 w-full h-full object-cover opacity-100">
+</video>
+            </video>
+
+            <!-- Capa oscura para legibilidad -->
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-slate-950/70"></div>
+
+            <div class="max-w-4xl mx-auto px-6 text-center relative z-10 pt-8">
+                <!-- Título Limpio con Espaciado y Sombra de Lectura -->
+<h1 class="text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-black tracking-tight leading-tight mb-8">
+    Atrae todas las miradas. <br />
+    <span class="text-red-600 uppercase inline-block mt-3 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+        ¡NO PASES DESAPERCIBIDO!
+    </span>
+</h1>
+
+                <!-- Botones Principales -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#catalogo" class="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider py-4 px-8 rounded-xl transition shadow-lg shadow-red-600/20">
+                        Ver Catálogo
+                    </a>
+                    
+                
+                </div>
+            </div>
+        </section>
+        <!-- SECCIÓN PRODUCTOS & BUSCADOR -->
+        <section id="catalogo" data-aos="fade-up" class="py-12 px-6 max-w-6xl mx-auto">
+            
+            <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-8 border-b border-slate-100 pb-5 gap-3">
+                <div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-brand bg-brand-light px-3 py-1 rounded-full inline-block mb-2">Diseños Exclusivos</span>
+                    <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">Alquiler & Venta</h2>
+                </div>
+                <p class="text-xs text-slate-400 font-normal max-w-xs leading-relaxed">Aumenta tus ventas no pases desapercibido.</p>
+            </div>
+
+            <!-- BARRA DE BÚSQUEDA Y FILTROS INTEGRADOS -->
+            <div class="bg-slate-50/70 border border-slate-200/60 rounded-3xl p-5 mb-10 shadow-sm backdrop-blur-sm">
+                <div class="max-w-xl mx-auto mb-6">
+                    <div class="bg-white border border-slate-200/80 rounded-2xl shadow-sm p-2 flex items-center gap-3 focus-within:border-brand transition">
+                        <div class="text-slate-300 pl-3 text-xs">
+                            <i class="fa-solid fa-magnifying-glass text-brand"></i>
+                        </div>
+                        <input type="text" id="searchInput" placeholder="Buscar muñecos, cine, ciclón de mano, carpas..." class="w-full bg-transparent text-slate-800 placeholder-slate-400 text-xs focus:outline-none font-medium">
+                        <button class="bg-brand text-white font-medium text-xs px-5 py-2.5 rounded-xl transition hover:opacity-95">
+                            Buscar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- FILTROS CON LAS NUEVAS SECCIONES AGREGADAS -->
+                <div class="flex flex-wrap justify-center items-center gap-2" id="filterButtons">
+                    <button data-filter="all" class="filter-btn bg-brand text-white font-medium text-xs px-4 py-2 rounded-xl transition shadow-sm">Todos</button>
+                    <button data-filter="llamadores" class="filter-btn bg-white hover:bg-slate-100 border border-slate-200/80 text-slate-600 font-medium text-xs px-4 py-2 rounded-xl transition">Llamadores</button>
+                      <button data-filter="replicas" class="filter-btn bg-white hover:bg-slate-100 border border-slate-200/80 text-slate-600 font-medium text-xs px-4 py-2 rounded-xl transition">Réplicas</button>
+                    <button data-filter="skydancers" class="filter-btn bg-white hover:bg-slate-100 border border-slate-200/80 text-slate-600 font-medium text-xs px-4 py-2 rounded-xl transition">Skydancers</button>
+                    <button data-filter="totems" class="filter-btn bg-white hover:bg-slate-100 border border-slate-200/80 text-slate-600 font-medium text-xs px-4 py-2 rounded-xl transition">Tótems</button>
+                    <button data-filter="carpas" class="filter-btn bg-white hover:bg-slate-100 border border-slate-200/80 text-slate-600 font-medium text-xs px-4 py-2 rounded-xl transition">Carpas Inflables</button>
+                    <button data-filter="cine" class="filter-btn bg-white hover:bg-slate-100 border border-slate-200/80 text-slate-600 font-medium text-xs px-4 py-2 rounded-xl transition">Pantallas Cine</button>
+                    <button data-filter="Sorteo" class="filter-btn bg-white hover:bg-slate-100 border border-slate-200/80 text-slate-600 font-medium text-xs px-4 py-2 rounded-xl transition">Sorteo</button>
+                    <button data-filter="gazebos" class="filter-btn bg-white hover:bg-slate-100 border border-slate-200/80 text-slate-600 font-medium text-xs px-4 py-2 rounded-xl transition">Gazebos</button>
+                </div>
+            </div>
+
+            <!-- GRILLA DE PRODUCTOS ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-6" id="productGrid">
+
+  <!-- LLAMADOR 15 (Doble Categoría: Llamadores + Réplicas) -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores replicas">
+    
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+       <img src="llamadores-15.jpg" alt="Muñeco Llamador 15" loading="lazy" class="w-full h-full object-cover transition-all duration-700 opacity-0 group-hover:scale-105" onload="this.classList.remove('opacity-0'); this.parentElement.classList.remove('animate-pulse');">
+    </div>
+    
+    <!-- Etiquetas visuales para ambas categorías -->
+    <div class="flex flex-wrap gap-2 mb-2">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md">Llamadores</span>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md">Réplicas</span>
+    </div>
+    
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Muñeco</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseño personalizado de 2 a 3 metros.</p>
+    
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores replicas">
+    
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="Llamadores-16.jpg" alt="Muñeco Llamador Oso" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    
+    <div class="flex flex-wrap gap-2 mb-2">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md">Llamadores</span>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md">Réplicas</span>
+    </div>
+    
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Oso</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseño personalizado de 2 a 3 metros.</p>
+    
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+ <!-- LLAMADOR 17 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="Llamadores-17.jpg" alt="Muñeco Llamador 17" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Cono de Tráfico</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- LLAMADOR 18 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="Llamadores-18.jpg" alt="Muñeco Llamador 18" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Lavadero</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- LLAMADOR 19 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="Llamadores-19.jpg" alt="Muñeco Llamador 19" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Zanahoria Patriota</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- LLAMADOR 20 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="Llamadores-20.jpg" alt="Muñeco Llamador 20" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Palta</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- LLAMADOR 21 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="Llamadores-21.jpg" alt="Muñeco Llamador 21" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Pollo</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- LLAMADOR 22 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="Llamadores-22.jpg" alt="Muñeco Llamador 22" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Zanahoria</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- LLAMADOR 23 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="Llamadores-23.jpg" alt="Muñeco Llamador 23" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Banana</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- LLAMADOR 24 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="Llamadores-24.jpg" alt="Muñeco Llamador 24" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Muñeco con Sombrero</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- LLAMADOR 25 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="Llamadores-25.jpg" alt="Muñeco Llamador 25" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Berenjena</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- LLAMADOR 26 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="Llamadores-26.jpg" alt="Muñeco Llamador 25" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Martillo</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- LLAMADOR 27 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="segundo-21.jpg" alt="Muñeco Llamador 29" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Cheft</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- LLAMADOR 28 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="ul-15.jpg" alt="Muñeco Llamador 29" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">vaca</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- LLAMADOR 29 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="Llamadores-29.jpg" alt="Muñeco Llamador 29" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Helado</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- LLAMADOR 30 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="segundo-16.jpg" alt="Muñeco Llamador 29" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Muñeco Market</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- LLAMADOR 31 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="segundo-17.jpg" alt="Muñeco Llamador 29" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Sandía</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- LLAMADOR 32 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="segundo-18.jpg" alt="Muñeco Llamador 29" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Huevo</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- LLAMADOR 33 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="segundo-19.jpg" alt="Muñeco Llamador 29" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Chef</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- LLAMADOR 34 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="segundo-20.jpg" alt="Muñeco Llamador 29" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Payaso</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- LLAMADOR 35 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="Llamadores-30.jpg" alt="Muñeco Llamador 30" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Auto lavado</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- LLAMADOR 36 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="llamadores">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="segundo-15.jpg" alt="Empanada" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Empanada</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    Contacto
+</a>
+</div>
+
+<!-- Categoría Skydancers -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <!-- SKYDANCER 1 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="skydancers">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="sky.jpg" alt="Skydancer Payaso Publichris" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Skydancers</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Skydancer con tu logo</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">todas las medidas y colores.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+        Contacto
+    </a>
+</div>
+
+<!-- SKYDANCER 2 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="skydancers">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="sky2.jpg" alt="Skydancer2 Publichris" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Skydancers</span>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Skydancer genérico</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">todas las medidas y colores.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+        Contacto
+    </a>
+</div>
+
+<!-- Categoría Réplica -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- RÉPLICA 1 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="replicas">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="re-01.jpg" alt="replica" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <div class="flex flex-wrap gap-2 mb-2">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md">Réplicas</span>
+    </div>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Envase de Medicamento</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+        Contacto
+    </a>
+</div>
+
+<!-- RÉPLICA 2 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="replicas">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="re-02.jpg" alt="replica" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <div class="flex flex-wrap gap-2 mb-2">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md">Réplicas</span>
+    </div>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Envase de Medicamento</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+        Contacto
+    </a>
+</div>
+
+<!-- RÉPLICA 3 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="replicas">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="re-03.jpg" alt="replica" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <div class="flex flex-wrap gap-2 mb-2">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md">Réplicas</span>
+    </div>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Botella</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+        Contacto
+    </a>
+</div>
+
+<!-- RÉPLICA 4 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="replicas">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="re-04.jpg" alt="replica" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <div class="flex flex-wrap gap-2 mb-2">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md">Réplicas</span>
+    </div>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Botella</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+        Contacto
+    </a>
+</div>
+
+<!-- RÉPLICA 5 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="Totems replicas">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="re-05.jpg" alt="Muñeco Llamador 15" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <div class="flex flex-wrap gap-2 mb-2">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md">Tótems</span>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md">Réplicas</span>
+    </div>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Muñeco</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+        Contacto
+    </a>
+</div>
+<!-- Categoría Tótems-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!-- TÓTEM 1 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="Totems">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="to-01.jpg" alt="Muñeco Llamador 15" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <div class="flex flex-wrap gap-2 mb-2">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md">Tótems</span>
+    </div>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Muñeco</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+        Contacto
+    </a>
+</div>
+
+<!-- TÓTEM 2 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="Totems">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="to-02.jpg" alt="Muñeco Llamador 15" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <div class="flex flex-wrap gap-2 mb-2">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md">Tótems</span>
+    </div>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Santa</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+        Contacto
+    </a>
+</div>
+
+<!-- TÓTEM 3 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="Totems">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="to-03.jpg" alt="Muñeco Llamador 15" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <div class="flex flex-wrap gap-2 mb-2">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md">Tótems</span>
+    </div>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Garrafón de Agua</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+        Contacto
+    </a>
+</div>
+
+<!-- TÓTEM 4 -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="Totems">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="to-04.jpg" alt="Muñeco Llamador 15" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <div class="flex flex-wrap gap-2 mb-2">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md">Tótems</span>
+    </div>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Guante de Béisbol</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+        Contacto
+    </a>
+</div>
+
+<!-- Categoría carpas -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="carpas">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="ex-02.jpg" alt="Muñeco Llamador 15" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <div class="flex flex-wrap gap-2 mb-2">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md">carpas inflables </span>
+    </div>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Carpa</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+        Contacto
+    </a>
+</div>
+
+<!-- Categoría cine -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="cine">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="ex-03.jpg" alt="Muñeco Llamador 15" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <div class="flex flex-wrap gap-2 mb-2">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md">pantalla cine</span>
+    </div>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Pantalla para Películas </h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+        Contacto
+    </a>
+</div>
+
+<!-- Categoría sorteo -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="sorteo">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="ex-01.jpg" alt="Pantalla para Películas" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <div class="flex flex-wrap gap-2 mb-2">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md">sorteo</span>
+    </div>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Ciclón de mano</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseño Personalizado de todas las medidas.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+        Contacto
+    </a>
+</div>
+
+<!-- Categoría Gazebos -->
+<div class="product-card bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand/40 transition-all duration-300 group cursor-pointer flex flex-col" data-category="gazebos">
+    <div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-4 relative">
+        <img src="ex-04.jpg" alt="Pantalla para Películas" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+    </div>
+    <div class="flex flex-wrap gap-2 mb-2">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md">Gazebos</span>
+    </div>
+    <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Gazebos</h3>
+    <p class="text-xs text-slate-500 mt-1 mb-4">Diseño Personalizado de todos los tamaños.</p>
+    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+        Contacto
+    </a>
+</div>
+
+</div>
+
+
+        </section>
+
+
+        <!-- SECCIÓN DE CONTACTO & FABRICACIÓN A MEDIDA -->
+        <section id="personalizados" class="max-w-6xl mx-auto px-6 my-12 pt-8">
+            
+           <!-- BLOQUE 1: DISEÑO A MEDIDA (FONDO BLANCO Y BOTÓN DE WHATSAPP PROTAGONISTA) -->
+<div class="relative bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-xl overflow-hidden mb-8 group">
+    <!-- Sutil toque decorativo de fondo -->
+    <div class="absolute -right-20 -top-20 w-60 h-60 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-8 relative z-10">
+        
+        <!-- Contenido de Texto -->
+        <div class="space-y-3 text-left max-w-xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-200 text-red-600 text-xs font-semibold">
+                <i class="fa-solid fa-pen-ruler text-xs"></i> Proyectos Personalizados
+            </div>
+            <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
+                ¿Buscás algo diferente? <span class="text-red-600">Lo fabricamos para vos.</span>
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed font-normal">
+                Lo fabricamos a medida. Desde figuras y personajes personalizados hasta réplicas gigantes de productos para tu marca.
+            </p>
+        </div>
+
+        <!-- Botón CTA WhatsApp (Protagonista Absoluto, Minimalista, Puro Verde WhatsApp) -->
+        <a href="javascript:void(0)" 
+           onclick="openWhatsApp('Hola PubliChris! Tengo una idea para diseñar un inflable a medida.')"
+           class="group/btn relative inline-flex items-center gap-3.5 bg-[#25D366] hover:bg-[#20ba5a] text-white px-8 py-5 rounded-2xl shadow-xl shadow-[#25D366]/30 hover:shadow-[#25D366]/50 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer flex-shrink-0">
+            
+            <!-- Icono blanco limpio -->
+            <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center text-white text-xl transition-transform duration-300 group-hover/btn:scale-110">
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            
+            <!-- Texto destacado y claro -->
+            <div class="text-left pr-1">
+                <span class="text-[10px] font-black uppercase tracking-widest text-emerald-100 block opacity-90">Consulta directa</span>
+                <span class="text-base font-black tracking-tight text-white flex items-center gap-2">
+                    Diseñar mi inflable
+                    <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover/btn:translate-x-1.5"></i>
+                </span>
+            </div>
+        </a>
+
+    </div>
+</div>
+
+            <!-- BLOQUE 2: UBICACIÓN Y MAPA (CON BOTÓN DE MAPS COMO PROTAGONISTA) -->
+<div id="ubicacion" class="bg-white border border-slate-200 rounded-3xl p-8 md:p-10 text-slate-900 shadow-xl relative overflow-hidden">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10">
+        
+        <!-- Información de Dirección y Acción -->
+        <div class="space-y-5 text-left">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-200 text-red-600 text-xs font-semibold">
+                <i class="fa-solid fa-location-dot text-xs"></i> Taller & Retiro de Pedidos
+            </div>
+            
+            <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
+                ¿Dónde nos encontramos?
+            </h3>
+            
+            <p class="text-slate-600 text-sm leading-relaxed font-normal">
+                Podés coordinar para retirar tu inflable directamente por nuestro taller o solicitar envíos a todo el país.
+            </p>
+            
+            <!-- Tarjeta de Dirección Unificada -->
+            <div class="bg-slate-50 border border-slate-100 p-4 rounded-2xl flex items-start gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-red-50 border border-red-200 flex items-center justify-center text-red-600 font-bold text-lg flex-shrink-0 mt-0.5">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+                <div class="space-y-0.5">
+                    <span class="font-bold text-slate-900 text-sm block">PubliChris Inflables</span>
+                    <span class="text-slate-700 font-medium text-xs block">3 de Febrero 3437</span>
+                    <span class="text-slate-500 text-[11px] block">B1678BPD Caseros, Prov. de Buenos Aires</span>
+                </div>
+            </div>
+
+            <!-- Botón Google Maps como Protagonista -->
+            <div>
+                <a href="https://www.google.com/maps/search/?api=1&query=Publichris,+3+de+Febrero+3437,+B1678BPD+Caseros,+Provincia+de+Buenos+Aires" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="group/mapbtn relative inline-flex items-center gap-3.5 bg-slate-900 hover:bg-slate-800 text-white px-7 py-4 rounded-2xl shadow-xl shadow-slate-900/20 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer">
+                    
+                    <div class="w-10 h-10 rounded-xl bg-red-600 text-white flex items-center justify-center text-lg transition-transform duration-300 group-hover/mapbtn:scale-110 shadow-sm">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    
+                    <div class="text-left pr-1">
+                        <span class="text-[10px] font-black uppercase tracking-widest text-slate-400 block">Cómo llegar</span>
+                        <span class="text-sm font-black tracking-tight text-white flex items-center gap-2">
+                            Abrir en Google Maps
+                            <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover/mapbtn:translate-x-1.5 text-red-500"></i>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Columna del Mapa (Se mantiene igual o con borde limpio) -->
+        <div class="relative rounded-2xl overflow-hidden border border-slate-200 shadow-inner h-[300px] lg:h-[360px] bg-slate-100">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.219890123456!2d-58.56789!3d-34.60123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb81a12345678%3A0x123456789abcdef!2s3%20de%20Febrero%203437%2C%20B1678BPD%20Caseros%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1650000000000!5m2!1ses!2sar" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                class="w-full h-full grayscale contrast-125 hover:grayscale-0 transition-all duration-500">
+            </iframe>
+        </div>
+
+    </div>
+</div>
+        </section>
+
+    </main>
+
+<!-- FOOTER PROFESIONAL Y MODERNO -->
+<footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-800/80 relative overflow-hidden">
+    <!-- Destellos decorativos sutiles de fondo -->
+    <div class="absolute left-1/2 -translate-x-1/2 bottom-0 w-[600px] h-40 bg-emerald-500/5 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+        
+        <!-- Columna 1: Marca y descripción -->
+        <div class="space-y-4">
+            <h3 class="text-2xl font-extrabold text-white tracking-tight">Publi<span class="text-red-600">Chris</span></h3>
+            <p class="text-xs text-slate-400 leading-relaxed font-normal">
+                Especialistas en la fabricación de inflables publicitarios, muñecos llamadores, tótems y estructuras de aire continuo de alta calidad.
+            </p>
+            <div class="flex items-center gap-3 pt-2">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/share/1E7mg33NGk/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300">
+                    <i class="fa-brands fa-facebook-f text-sm"></i>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/inflables_publichris/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-pink-600 hover:border-pink-600 transition-all duration-300">
+                    <i class="fa-brands fa-instagram text-sm"></i>
+                </a>
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@publichris4" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all duration-300">
+                    <i class="fa-brands fa-tiktok text-sm"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Columna 2: Ubicación / Google Maps -->
+        <div class="space-y-4">
+            <h4 class="text-xs font-black uppercase tracking-wider text-white">Ubicación</h4>
+            <div class="flex items-start gap-3.5 text-xs">
+                <div class="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-500 flex-shrink-0 mt-0.5">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                    <span class="text-slate-200 font-bold block mb-0.5">Taller Central:</span>
+                    <p class="text-slate-400">3 de Febrero 3437, B1678BPD</p>
+                    <p class="text-slate-400">Caseros, Prov. de Buenos Aires</p>
+                </div>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Publichris,+3+de+Febrero+3437,+B1678BPD+Caseros,+Provincia+de+Buenos+Aires" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="inline-flex items-center gap-2 text-xs font-bold text-red-500 hover:text-red-400 pt-1 transition-colors">
+                <i class="fa-solid fa-map-pin"></i> Ver en Google Maps
+            </a>
+        </div>
+
+        <!-- Columna 3: Teléfonos y Contacto Directo -->
+        <div class="space-y-4">
+            <h4 class="text-xs font-black uppercase tracking-wider text-white">Contacto Directo</h4>
+            
+            <div class="space-y-3 text-xs">
+                <a href="javascript:void(0)" onclick="openWhatsApp('Hola PubliChris! Me comunico desde la web.')" class="flex items-center gap-3.5 text-slate-300 hover:text-emerald-400 transition-colors group">
+                    <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-500 flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-white block">+54 9 11 7371 0508</span>
+                        <span class="text-[10px] text-slate-500">Atención / Ventas</span>
+                    </div>
+                </a>
+
+                <a href="tel:+5491173710508" class="flex items-center gap-3.5 text-slate-300 hover:text-cyan-400 transition-colors group">
+                    <div class="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-phone text-xs"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-white block">+54 9 11 7371 0508</span>
+                        <span class="text-[10px] text-slate-500">Llamadas directas</span>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <!-- Línea final de copyright -->
+    <div class="max-w-6xl mx-auto px-6 mt-12 pt-6 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center text-[11px] text-slate-500 gap-4">
+        <p>© 2026 PubliChris. Todos los derechos reservados.</p>
+        
+    </div>
+</footer>
+
+<!-- SCRIPTS Y CIERRE -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        // Filtros por categoría
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-brand', 'text-white', 'shadow-md');
+                    btn.classList.add('bg-slate-100', 'text-slate-600');
+                });
+                button.classList.add('bg-brand', 'text-white', 'shadow-md');
+                button.classList.remove('bg-slate-100', 'text-slate-600');
+
+                const filterValue = button.getAttribute('data-filter');
+                
+                productCards.forEach(card => {
+                    const category = card.getAttribute('data-category') || '';
+                    if (filterValue === 'all' || category.toLowerCase().includes(filterValue.toLowerCase())) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Búsqueda en tiempo real
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                productCards.forEach(card => {
+                    const text = card.textContent.toLowerCase();
+                    if (text.includes(term)) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        }
+    });
+</script>
+
+<script>
+    // 1. Detectar si el usuario está en un teléfono celular (ancho menor o igual a 768px)
+    const esMovil = window.innerWidth <= 768;
+
+    // 2. Videos para Computadoras de Escritorio (Tus videos intactos)
+    const videosDesktop = [
+        "in33.mov",
+        
+    ];
+
+    // 3. Videos exclusivos para Teléfonos Celulares (Modifica estos nombres con los videos que quieras para móvil)
+    const videosMovil = [
+        "mo33.mov",
+       
+        
+    ];
+
+    // Selecciona la lista adecuada sin afectar la versión de escritorio
+    const videos = esMovil ? videosMovil : videosDesktop;
+
+    let currentVideoIndex = 0;
+    const videoElement = document.getElementById('heroVideo');
+
+    if (videoElement) {
+        videoElement.src = videos[currentVideoIndex];
+
+        videoElement.addEventListener('ended', function() {
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+            videoElement.src = videos[currentVideoIndex];
+            videoElement.play().catch(function(error) {
+                console.log("Error al reproducir el video:", error);
+            });
+        });
+    }
+</script>
+
+<!-- Librería para animaciones al hacer scroll (AOS JS) -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+        easing: 'ease-out-cubic'
+    });
+</script>
+
+<script>
+    function openWhatsApp(mensaje) {
+        const telefono = "5491173710508"; 
+        const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, '_blank');
+    }
+</script>
+   
+</body>
+</html>

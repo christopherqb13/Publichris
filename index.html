@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PubliChris | Selecciona tu Región</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="min-h-screen bg-slate-50 flex flex-col antialiased">
+    
+    <!-- ÁREA PRINCIPAL -->
+    <main class="flex-grow flex flex-col items-center justify-center p-6 relative overflow-hidden">
+        
+        <!-- Toque decorativo sutil de fondo -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-red-600/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 text-center max-w-lg w-full">
+            
+            <!-- Logo Principal y Eslogan Superior -->
+            <div class="mb-10">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-2">
+                    Publi<span class="text-red-600">Chris</span>
+                </h1>
+                <p class="text-yellow-600/80 text-sm md:text-base font-semibold italic tracking-wide">
+                    "No pases desapercibido"
+                </p>
+            </div>
+
+            <p class="text-slate-500 mb-8 text-sm md:text-base">Selecciona tu país para ver el catálogo y contacto local.</p>
+
+            <!-- Botones de País -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                
+                <!-- Botón Argentina -->
+                <a href="argentina.html" class="group relative bg-white border border-slate-200 hover:border-blue-400 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-center gap-4 cursor-pointer hover:-translate-y-1">
+                    <div class="text-4xl">🇦🇷</div>
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Argentina</h2>
+                        <span class="text-xs text-slate-400">Atención local</span>
+                    </div>
+                </a>
+
+                <!-- Botón Venezuela -->
+                <a href="venezuela.html" class="group relative bg-white border border-slate-200 hover:border-yellow-500 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-center gap-4 cursor-pointer hover:-translate-y-1">
+                    <div class="text-4xl">🇻🇪</div>
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-900 group-hover:text-yellow-600 transition-colors">Venezuela</h2>
+                        <span class="text-xs text-slate-400">Atención local</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="w-full bg-white border-t border-slate-200 py-8 relative z-20">
+        <div class="max-w-md mx-auto px-6 flex flex-col items-center justify-center text-center">
+            
+            <!-- Logo en el Footer -->
+            <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">
+                Publi<span class="text-red-600">Chris</span>
+            </h2>
+            
+            <!-- Eslogan en el Footer -->
+            <p class="text-yellow-500 text-sm font-medium italic mt-1 mb-5">
+                "No pases desapercibido"
+            </p>
+
+            <!-- Redes Sociales -->
+            <div class="flex items-center gap-4 mb-4">
+                <a href="https://www.facebook.com/share/1E7mg33NGk/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-500 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1">
+                    <i class="fa-brands fa-facebook-f text-sm"></i>
+                </a>
+                <a href="https://www.instagram.com/inflables_publichris/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-500 hover:text-white hover:bg-pink-600 hover:border-pink-600 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1">
+                    <i class="fa-brands fa-instagram text-sm"></i>
+                </a>
+                <a href="https://www.tiktok.com/@publichris4" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-500 hover:text-white hover:bg-slate-900 hover:border-slate-900 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1">
+                    <i class="fa-brands fa-tiktok text-sm"></i>
+                </a>
+            </div>
+
+            <!-- Copyright -->
+            <p class="text-[10px] text-slate-400">© 2026 PubliChris. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
