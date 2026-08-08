@@ -124,15 +124,23 @@
 </div>
 
 <script>
-    window.addEventListener('load', function() {
+    // Verificamos si el usuario ya entró a la página en esta sesión
+    if (sessionStorage.getItem('visitado')) {
+        // Si ya entró, eliminamos el preloader al instante para que no estorbe
         const preloader = document.getElementById('preloader');
-        if (preloader) {
-            // Añade clases para desvanecerlo suavemente
-            preloader.classList.add('opacity-0', 'pointer-events-none');
-            // Lo elimina del documento por completo tras la animación
-            setTimeout(() => preloader.remove(), 700);
-        }
-    });
+        if (preloader) preloader.remove();
+    } else {
+        // Si es su primera vez, guardamos el registro y dejamos el preloader activo
+        sessionStorage.setItem('visitado', 'true');
+        
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.classList.add('opacity-0', 'pointer-events-none');
+                setTimeout(() => preloader.remove(), 700);
+            }
+        });
+    }
 </script>
 
 
