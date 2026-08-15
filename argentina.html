@@ -117,113 +117,311 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased selection:bg-brand-light selection:text-brand">
 
-    <!-- Pantalla de carga para esconder el lag inicial -->
-<div id="preloader" class="fixed inset-0 bg-slate-950 z-50 flex flex-col items-center justify-center transition-opacity duration-700">
-    <div class="text-white font-bold tracking-widest text-lg uppercase animate-pulse mb-3">Publichris</div>
-    <div class="w-10 h-10 border-4 border-red-600 border-t-transparent rounded-full animate-spin"></div>
-</div>
+  <!-- Pantalla de carga para esconder el lag inicial -->
+    <div id="preloader" class="fixed inset-0 bg-slate-950 z-50 flex flex-col items-center justify-center transition-opacity duration-700">
+        <div class="text-white font-bold tracking-widest text-lg uppercase animate-pulse mb-3">Publichris</div>
+        <div class="w-10 h-10 border-4 border-red-600 border-t-transparent rounded-full animate-spin"></div>
+    </div>
 
-<script>
-    // Verificamos si el usuario ya entró a la página en esta sesión
-    if (sessionStorage.getItem('visitado')) {
-        // Si ya entró, eliminamos el preloader al instante para que no estorbe
-        const preloader = document.getElementById('preloader');
-        if (preloader) preloader.remove();
-    } else {
-        // Si es su primera vez, guardamos el registro y dejamos el preloader activo
-        sessionStorage.setItem('visitado', 'true');
-        
-        window.addEventListener('load', function() {
+    <script>
+        // Verificamos si el usuario ya entró a la página en esta sesión
+        if (sessionStorage.getItem('visitado')) {
+            // Si ya entró, eliminamos el preloader al instante para que no estorbe
             const preloader = document.getElementById('preloader');
-            if (preloader) {
-                preloader.classList.add('opacity-0', 'pointer-events-none');
-                setTimeout(() => preloader.remove(), 700);
-            }
-        });
-    }
-</script>
-    
-    
-
-
-    <!-- HEADER -->
-    <!-- NAVBAR CON SCROLL SUAVE -->
-<header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 z-50">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-3">
+            if (preloader) preloader.remove();
+        } else {
+            // Si es su primera vez, guardamos el registro y dejamos el preloader activo
+            sessionStorage.setItem('visitado', 'true');
+            
+            window.addEventListener('load', function() {
+                const preloader = document.getElementById('preloader');
+                if (preloader) {
+                    preloader.classList.add('opacity-0', 'pointer-events-none');
+                    setTimeout(() => preloader.remove(), 700);
+                }
+            });
+        }
+    </script>
         
-        <!-- Fila superior en móvil: Logo y Redes Sociales -->
-        <div class="w-full md:w-auto flex items-center justify-between">
+<header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/85 backdrop-blur-xl border-b border-slate-900/80 shadow-2xl shadow-black/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        
+        <!-- FILA PRINCIPAL (Escritorio y Celular) -->
+        <div class="h-16 sm:h-20 flex items-center justify-between">
+            
             <!-- Logo -->
-            <a href="#" class="text-xl font-black text-slate-900 tracking-tight">
-                Publi<span class="text-brand">chris</span>
+            <a href="#" class="flex items-center gap-3.5 group">
+                <div class="relative rounded-2xl bg-gradient-to-br transition-all duration-300">
+                    <img src="logo publi.png" alt="Publichris Logo" class="h-7 sm:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                </div>
+                <span class="text-xl sm:text-2xl font-black tracking-tight text-white flex items-center drop-shadow-md">
+                    Publi<span class="text-red-600">chris</span>
+                </span>
             </a>
 
-            <!-- Redes Sociales (Opcional: visibles en móvil al lado del logo) -->
-            <div class="flex md:hidden items-center gap-2">
-                <a href="https://www.facebook.com/share/1e7mg33NGk/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-700">
-                    <i class="fa-brands fa-facebook-f text-xs"></i>
+            <!-- Navegación Desktop (SOLO EN PANTALLAS GRANDES) -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide text-slate-300">
+                <a href="#catalogo" class="hover:text-red-500 transition-colors">Nuestros Inflables</a>
+                <a href="#contacto" class="hover:text-red-500 transition-colors">Contacto</a>
+                <a href="#direccion" class="hover:text-red-500 transition-colors">Dirección</a>
+            </nav>
+
+            <!-- Redes Sociales -->
+            <div class="flex items-center gap-2 sm:gap-3 text-slate-400">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/share/1E7mg33NGk/" target="_blank" rel="noopener noreferrer" class="p-2 sm:p-2.5 rounded-xl bg-slate-900/60 hover:bg-slate-800 border border-slate-800 hover:text-white transition-all duration-300 hover:scale-105" aria-label="Facebook">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </a>
-                <a href="https://www.instagram.com/inflables_publichris/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-700">
-                    <i class="fa-brands fa-instagram text-xs"></i>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/inflables_publichris/" target="_blank" rel="noopener noreferrer" class="p-2 sm:p-2.5 rounded-xl bg-slate-900/60 hover:bg-slate-800 border border-slate-800 hover:text-white transition-all duration-300 hover:scale-105" aria-label="Instagram">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 </a>
-                <a href="https://www.tiktok.com/@publichris4" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-700">
-                    <i class="fa-brands fa-tiktok text-xs"></i>
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@publichris4" target="_blank" rel="noopener noreferrer" class="p-2 sm:p-2.5 rounded-xl bg-slate-900/60 hover:bg-slate-800 border border-slate-800 hover:text-white transition-all duration-300 hover:scale-105" aria-label="TikTok">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
                 </a>
             </div>
         </div>
 
-        <!-- Enlaces del Menú con Scroll Suave -->
-        <nav class="w-full md:w-auto flex items-center justify-center gap-6 text-xs font-semibold text-slate-600 py-1 md:py-0 border-t md:border-t-0 border-slate-100">
-            <a href="#catalogo" class="hover:text-brand transition py-1">Catálogo</a>
-            <a href="#personalizados" class="hover:text-brand transition py-1">Contacto</a>
-            <a href="#ubicacion" class="hover:text-brand transition-colors py-1">Dirección</a>
+        <!-- NAVEGACIÓN MÓVIL (SOLO EN CELULARES) -->
+        <nav class="flex md:hidden items-center justify-around pb-2.5 pt-1 border-t border-slate-900/60 text-xs font-bold tracking-wider text-slate-300">
+            <a href="#catalogo" class="hover:text-red-500 transition-colors py-1">Nuestros Inflables</a>
+            <a href="#contacto" class="hover:text-red-500 transition-colors py-1">Contacto</a>
+            <a href="#direccion" class="hover:text-red-500 transition-colors py-1">Dirección</a>
         </nav>
-
-        <!-- Redes Sociales para Escritorio -->
-        <div class="hidden md:flex items-center gap-4 text-slate-700">
-            <a href="https://www.facebook.com/share/1E7mg33NGk/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-slate-50 flex items-center justify-center hover:bg-slate-100 transition">
-                <i class="fa-brands fa-facebook-f text-sm"></i>
-            </a>
-            <a href="https://www.instagram.com/inflables_publichris/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-slate-50 flex items-center justify-center hover:bg-slate-100 transition">
-                <i class="fa-brands fa-instagram text-sm"></i>
-            </a>
-            <a href="https://www.tiktok.com/@publichris4" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-slate-50 flex items-center justify-center hover:bg-slate-100 transition">
-                <i class="fa-brands fa-tiktok text-sm"></i>
-            </a>
-        </div>
 
     </div>
 </header>
+    <main class="flex-grow">
 
-    <main class="flex-grow pt-16">
         
-<!-- HERO SECTION MINIMALISTA CON ROTACIÓN DE VIDEO -->
-<section class="relative bg-slate-950 text-white min-h-[85vh] flex items-center justify-center overflow-hidden border-b border-slate-900">
-    
-    <!-- Video de fondo (El script de abajo le inyecta el video y la miniatura correcta) -->
-    <video id="heroVideo" autoplay muted playsinline loop preload="auto" class="absolute inset-0 w-full h-full object-cover opacity-100">
+      <!-- HERO SECTION COMPACTO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <section class="relative bg-slate-950 text-white h-screen w-full flex flex-col justify-between overflow-hidden pt-20 pb-6 px-8 sm:px-8">
+        
+       <!-- Video de fondo con overlay -->
+<div class="absolute inset-0 overflow-hidden pointer-events-none">
+
+    <!-- Video para ESCRITORIO (Se ve en PC, se oculta en celulares) -->
+    <video autoplay muted loop playsinline class="hidden md:block w-full h-full object-cover opacity-100 scale-105 filter brightness-75">
+        <source src="in33.mov" type="video/mp4">
     </video>
 
-    <!-- Capa oscura para legibilidad -->
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-slate-950/70"></div>
+    <!-- Video para CELULAR (Se ve en celulares, se oculta en PC) -->
+    <video autoplay muted loop playsinline class="block md:hidden w-full h-full object-cover opacity-100 scale-105 filter brightness-75">
+        <source src="mo33.mov" type="video/mp4">
+    </video>
 
-    <div class="max-w-4xl mx-auto px-6 text-center relative z-10 pt-8">
-        <!-- Título Limpio con Espaciado y Sombra de Lectura -->
-        <h1 class="text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-black tracking-tight leading-tight mb-8">
-            Atrae todas las miradas. <br />
-            <span class="text-red-600 uppercase inline-block mt-3 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
-                ¡NO PASES DESAPERCIBIDO!
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-slate-950"></div>
+</div>
+
+        <!-- Contenido principal del Hero (Tamaño completo y elegante) -->
+        <div class="relative z-10 max-w-5xl mx-auto text-center my-auto">
+            <span class="inline-block px-3.5 py-1 rounded-full bg-red-600/20 border border-red-500/30 text-red-400 text-xs font-bold uppercase tracking-widest mb-3 shadow-lg">
+                No Pases Desapercibido
             </span>
-        </h1>
-
-        <!-- Botones Principales -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#catalogo" class="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider py-4 px-8 rounded-xl transition shadow-lg shadow-red-600/20">
-                Ver Catálogo
-            </a>
+            <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-4 drop-shadow-lg">
+                Transforma tu marca con <span class="text-red-600">impacto visual</span>
+            </h1>
+            <p class="text-slate-300 text-sm sm:text-base font-normal leading-relaxed max-w-2xl mx-auto mb-6">
+                Diseñamos y fabricamos estructuras inflables de alta gama para destacar tu negocio en cada evento.
+            </p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="#catalogo" class="px-6 py-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-sm tracking-wide transition-all duration-300 shadow-lg shadow-red-600/30 hover:scale-105">
+                    Ver Nuestros Inflables
+                </a>
+                <a href="https://wa.me/5491173710508?text=Hola%2C%20me%20gustaría%20obtener%20más%20información%20sobre%20sus%20productos%20o%20servicios." 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="inline-flex items-center justify-center px-6 py-3 font-semibold text-white transition-all duration-300 bg-green-600 rounded-xl hover:bg-green-700 hover:scale-105 shadow-lg shadow-green-600/30">
+    Contacto
+</a>
+            </div>
         </div>
+
+        <!-- BARRA ANCHA DE CRÉDITOS Y BANCOS CON FLECHAS DE NAVEGACIÓN ------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+        <style>
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>
+
+<div class="relative z-10 max-w-7xl mx-auto w-full bg-white/95 backdrop-blur-md rounded-2xl py-4 px-4 sm:px-6 shadow-2xl border border-slate-200 mt-8">
+    <p class="text-xs font-bold uppercase tracking-wider text-slate-700 text-center mb-3">
+        Financiación y créditos disponibles con todos los bancos y billeteras
+    </p>
+    
+    <div class="relative flex items-center">
+        
+        <button onclick="prevBank()" class="absolute -left-2 sm:-left-3 z-30 p-2 sm:p-2.5 rounded-full bg-slate-900/90 text-white shadow-xl hover:bg-red-600 transition-all duration-300 hover:scale-110 focus:outline-none cursor-pointer" aria-label="Anterior">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+            </svg>
+        </button>
+
+        <div id="bankCarousel" class="w-full overflow-x-auto scroll-smooth no-scrollbar flex gap-6 sm:gap-8 items-center py-2 px-6 sm:px-10">
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/galicia.png" alt="Galicia" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">Galicia</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/santander.png" alt="Santander" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">Santander</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/bbva.png" alt="BBVA" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">BBVA</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/macro.png" alt="Macro" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">Macro</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/supervielle.png" alt="Supervielle" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">Supervielle</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/icbc.png" alt="ICBC" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">ICBC</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/ciudad.png" alt="Ciudad" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">Ciudad</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/bna.png" alt="Banco Nación" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">Banco Nación</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/santander.png" alt="Bapro" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">santander</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/bbva.png" alt="Mercado Pago" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">bbva</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/naranjax.png" alt="Naranja X" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">Naranja X</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/hipotecario.png" alt="Hipotecario" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">Hipotecario</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/patagonia.png" alt="Patagonia" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">Patagonia</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/bancor.png" alt="BANCOR" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">BANCOR</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/yoy.png" alt="YOY" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">YOY</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/santafe.png" alt="YOY" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">santa fé</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/comafi.png" alt="YOY" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">comafi</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/bancobica.png" alt="YOY" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">bica</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/buepp.png" alt="YOY" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">buepp</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/corrientes.png" alt="YOY" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">corrientes</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/entrerios.png" alt="YOY" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">entre rios</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/nueva.png" alt="YOY" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">macro nuevo</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/sanjuan.png" alt="YOY" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">san juan</span>
+            </div>
+            <div class="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[110px] shrink-0 hover:scale-105 transition-transform duration-200">
+                <img src="logos/santacruz.png" alt="YOY" class="h-10 sm:h-12 w-auto object-contain mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-700">santa cruz</span>
+            </div>
+        </div>
+
+        <button onclick="nextBank()" class="absolute -right-2 sm:-right-3 z-30 p-2 sm:p-2.5 rounded-full bg-slate-900/90 text-white shadow-xl hover:bg-red-600 transition-all duration-300 hover:scale-110 focus:outline-none cursor-pointer" aria-label="Siguiente">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+            </svg>
+        </button>
+
     </div>
-</section>
+</div>
+    </section>
+
+    <!-- Script de control para las flechas del carrusel ----------------------------------------------------------------------------------------------------------------------------------------------------------->
+   <script>
+    const carousel = document.getElementById('bankCarousel');
+    const stepAmount = 260; // Distancia en px que avanza cada paso
+    let autoPlayTimer = null;
+
+    function nextBank() {
+        if (!carousel) return;
+        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+        if (carousel.scrollLeft >= maxScroll - 10) {
+            carousel.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            carousel.scrollBy({ left: stepAmount, behavior: 'smooth' });
+        }
+        resetAutoPlay();
+    }
+
+    function prevBank() {
+        if (!carousel) return;
+        if (carousel.scrollLeft <= 10) {
+            carousel.scrollTo({ left: carousel.scrollWidth, behavior: 'smooth' });
+        } else {
+            carousel.scrollBy({ left: -stepAmount, behavior: 'smooth' });
+        }
+        resetAutoPlay();
+    }
+
+    function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayTimer = setInterval(nextBank, 2500); // Avanza cada 2.5 segundos
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayTimer) clearInterval(autoPlayTimer);
+    }
+
+    function resetAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+    }
+
+    if (carousel) {
+        carousel.addEventListener('mouseenter', stopAutoPlay);
+        carousel.addEventListener('mouseleave', startAutoPlay);
+        startAutoPlay();
+    }
+</script>
+      <!-- GRILLA DE PRODUCTOS ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
         <!-- SECCIÓN PRODUCTOS & BUSCADOR -->
         <section id="catalogo" data-aos="fade-up" class="py-12 px-6 max-w-6xl mx-auto">
             
@@ -288,7 +486,7 @@
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Muñeco</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseño personalizado de 2 a 3 metros.</p>
     
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -307,7 +505,7 @@
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Oso</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseño personalizado de 2 a 3 metros.</p>
     
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -329,7 +527,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Cono de Tráfico</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -342,7 +540,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Lavadero</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -355,7 +553,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Zanahoria Patriota</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -368,7 +566,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Palta</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -381,7 +579,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Pollo</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -394,7 +592,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Zanahoria</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -407,7 +605,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Banana</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -420,7 +618,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Muñeco con Sombrero</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -433,7 +631,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Berenjena</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -446,7 +644,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Martillo</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -459,7 +657,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Cheft</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -472,7 +670,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">vaca</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -485,7 +683,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Helado</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -498,7 +696,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Muñeco Market</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -511,7 +709,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Sandía</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -524,7 +722,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Huevo</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -537,7 +735,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Chef</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -550,7 +748,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Payaso</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -563,7 +761,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Auto lavado</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -576,7 +774,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Llamadores</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Empanada</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños de 2 a 3 metros.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
     Contacto
 </a>
 </div>
@@ -591,7 +789,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Skydancers</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Skydancer con tu logo</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">todas las medidas y colores.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
         Contacto
     </a>
 </div>
@@ -604,7 +802,7 @@
     <span class="text-[10px] font-bold uppercase tracking-wider text-brand bg-brand-light px-2.5 py-1 rounded-md w-max">Skydancers</span>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Skydancer genérico</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">todas las medidas y colores.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
         Contacto
     </a>
 </div>
@@ -622,7 +820,7 @@
     </div>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Envase de Medicamento</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
         Contacto
     </a>
 </div>
@@ -637,7 +835,7 @@
     </div>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Envase de Medicamento</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
         Contacto
     </a>
 </div>
@@ -652,7 +850,7 @@
     </div>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Botella</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
         Contacto
     </a>
 </div>
@@ -667,7 +865,7 @@
     </div>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Botella</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
         Contacto
     </a>
 </div>
@@ -683,7 +881,7 @@
     </div>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Muñeco</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
         Contacto
     </a>
 </div>
@@ -699,7 +897,7 @@
     </div>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Muñeco</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
         Contacto
     </a>
 </div>
@@ -714,7 +912,7 @@
     </div>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Santa</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
         Contacto
     </a>
 </div>
@@ -729,7 +927,7 @@
     </div>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Garrafón de Agua</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
         Contacto
     </a>
 </div>
@@ -744,7 +942,7 @@
     </div>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Guante de Béisbol</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
         Contacto
     </a>
 </div>
@@ -759,7 +957,7 @@
     </div>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Carpa</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
         Contacto
     </a>
 </div>
@@ -774,7 +972,7 @@
     </div>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Pantalla para Películas </h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseños Personalizados de todas las medidas.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
         Contacto
     </a>
 </div>
@@ -789,7 +987,7 @@
     </div>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Ciclón de mano</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseño Personalizado de todas las medidas.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
         Contacto
     </a>
 </div>
@@ -804,7 +1002,7 @@
     </div>
     <h3 class="text-base font-bold text-slate-900 mt-2 group-hover:text-brand transition-colors">Gazebos</h3>
     <p class="text-xs text-slate-500 mt-1 mb-4">Diseño Personalizado de todos los tamaños.</p>
-    <a href="#personalizados" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
+    <a href="#contacto" class="mt-auto w-full bg-slate-900 text-white font-bold text-xs py-2.5 rounded-xl transition-all duration-300 group-hover:bg-brand group-hover:shadow-md group-hover:shadow-brand/20 text-center block">
         Contacto
     </a>
 </div>
@@ -816,7 +1014,7 @@
 
 
         <!-- SECCIÓN DE CONTACTO & FABRICACIÓN A MEDIDA -->
-        <section id="personalizados" class="max-w-6xl mx-auto px-6 my-12 pt-8">
+        <section id="contacto" class="max-w-6xl mx-auto px-6 my-12 pt-8">
             
            <!-- BLOQUE 1: DISEÑO A MEDIDA (FONDO BLANCO Y BOTÓN DE WHATSAPP PROTAGONISTA) -->
 <div class="relative bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-xl overflow-hidden mb-8 group">
@@ -862,7 +1060,7 @@
 </div>
 
             <!-- BLOQUE 2: UBICACIÓN Y MAPA (CON BOTÓN DE MAPS COMO PROTAGONISTA) -->
-<div id="ubicacion" class="bg-white border border-slate-200 rounded-3xl p-8 md:p-10 text-slate-900 shadow-xl relative overflow-hidden">
+<div id="direccion" class="bg-white border border-slate-200 rounded-3xl p-8 md:p-10 text-slate-900 shadow-xl relative overflow-hidden">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10">
         
         <!-- Información de Dirección y Acción -->
